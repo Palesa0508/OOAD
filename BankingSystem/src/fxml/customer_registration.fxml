@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="boundaries.CustomerRegistrationController" prefHeight="600.0" prefWidth="700.0">
+   <center>
+      <ScrollPane fitToWidth="true">
+         <VBox alignment="TOP_CENTER" spacing="15.0">
+            <Label text="Customer Registration" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            
+            <TitledPane text="Personal Information" expanded="true">
+               <content>
+                  <GridPane hgap="10.0" vgap="10.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                     </columnConstraints>
+                     
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     
+                     <Label text="First Name *:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                     <TextField fx:id="firstNameField" promptText="e.g., Palesa" 
+                               GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                     
+                     <Label text="Surname *:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                     <TextField fx:id="surnameField" promptText="e.g., Leeto" 
+                               GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                     
+                     <Label text="Date of Birth *:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                     <DatePicker fx:id="dobPicker" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     
+                     <Label text="Gender *:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                     <ComboBox fx:id="genderComboBox" promptText="Select Gender" 
+                              GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     
+                     <Label text="ID Number *:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                     <TextField fx:id="idNumberField" promptText="e.g., 123456789" 
+                               GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     
+                     <Label text="Nationality:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                     <TextField fx:id="nationalityField" promptText="e.g., Motswana" 
+                               GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  </GridPane>
+               </content>
+            </TitledPane>
+            
+            <TitledPane text="Contact Information">
+               <content>
+                  <GridPane hgap="10.0" vgap="10.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                     </columnConstraints>
+                     
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     
+                     <Label text="Physical Address *:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                     <TextField fx:id="addressField" promptText="Full physical address" 
+                               GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                     
+                     <Label text="Email Address:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                     <TextField fx:id="emailField" promptText="email@example.com" 
+                               GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     
+                     <Label text="Phone Number *:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                     <TextField fx:id="phoneField" promptText="e.g., 71234567" 
+                               GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  </GridPane>
+               </content>
+            </TitledPane>
+            
+            <TitledPane text="Next of Kin Information">
+               <content>
+                  <GridPane hgap="10.0" vgap="10.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                     </columnConstraints>
+                     
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     
+                     <Label text="Next of Kin Name *:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                     <TextField fx:id="nextOfKinNameField" promptText="Full name" 
+                               GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                     
+                     <Label text="Relationship *:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                     <TextField fx:id="nextOfKinRelationshipField" promptText="e.g., Mother, Spouse" 
+                               GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                     
+                     <Label text="Next of Kin Phone *:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                     <TextField fx:id="nextOfKinPhoneField" promptText="Phone number" 
+                               GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     
+                     <Label text="Next of Kin Address:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                     <TextField fx:id="nextOfKinAddressField" promptText="Physical address" 
+                               GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  </GridPane>
+               </content>
+            </TitledPane>
+            
+            <TitledPane text="Employment Information (Required for Cheque Accounts)">
+               <content>
+                  <GridPane hgap="10.0" vgap="10.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                     </columnConstraints>
+                     
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     
+                     <Label text="Employer Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                     <TextField fx:id="employerField" promptText="Company name" 
+                               GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                     
+                     <Label text="Company Address:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                     <TextField fx:id="companyAddressField" promptText="Company physical address" 
+                               GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  </GridPane>
+               </content>
+            </TitledPane>
+            
+            <HBox spacing="20.0">
+               <Button fx:id="submitButton" mnemonicParsing="false" onAction="#handleSubmit" 
+                      prefHeight="35.0" prefWidth="120.0" text="Register" />
+               <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleCancel" 
+                      prefHeight="35.0" prefWidth="120.0" text="Cancel" />
+            </HBox>
+         </VBox>
+      </ScrollPane>
+   </center>
+   
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</BorderPane>

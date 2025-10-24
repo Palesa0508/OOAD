@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
+   <center>
+      <VBox alignment="CENTER" spacing="20" style="-fx-background-color: linear-gradient(to bottom, #e6f3ff, #f0f8ff);">
+         <padding><Insets top="50" right="50" bottom="50" left="50"/></padding>
+         
+         <VBox alignment="CENTER" spacing="10">
+            <Text text="Pale's Bank System" style="-fx-fill: #4682b4; -fx-font-size: 32; -fx-font-weight: bold;"/>
+            <Text text="Secure Banking Solution" style="-fx-fill: #4682b4; -fx-font-size: 16;"/>
+         </VBox>
+         
+         <VBox alignment="CENTER" spacing="15" style="-fx-background-color: white; -fx-padding: 40; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);">
+            <Label text="Login to Your Account" style="-fx-text-fill: #4682b4; -fx-font-size: 20; -fx-font-weight: bold;"/>
+            
+            <VBox spacing="10">
+               <Label text="Username:" style="-fx-text-fill: #4682b4; -fx-font-weight: bold;"/>
+               <TextField fx:id="usernameField" promptText="Enter username" style="-fx-background-radius: 8; -fx-border-color: #4682b4; -fx-border-radius: 8; -fx-padding: 8;"/>
+            </VBox>
+            
+            <VBox spacing="10">
+               <Label text="Password:" style="-fx-text-fill: #4682b4; -fx-font-weight: bold;"/>
+               <PasswordField fx:id="passwordField" promptText="Enter password" style="-fx-background-radius: 8; -fx-border-color: #4682b4; -fx-border-radius: 8; -fx-padding: 8;"/>
+            </VBox>
+            
+            <VBox spacing="15" alignment="CENTER">
+               <HBox spacing="20" alignment="CENTER">
+                  <Button text="Login" onAction="#handleLogin" style="-fx-background-color: #ff69b4; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 10 30; -fx-font-size: 14;"/>
+                  <Button text="Demo Credentials" onAction="#showDemoCredentials" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 10 20; -fx-font-size: 14;"/>
+               </HBox>
+               
+               <Text text="© 2024 Pale's Bank System. All rights reserved." style="-fx-fill: #4682b4; -fx-font-size: 12;"/>
+            </VBox>
+         </VBox>
+      </VBox>
+   </center>
+</BorderPane>

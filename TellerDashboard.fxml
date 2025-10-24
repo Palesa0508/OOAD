@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TellerDashboardController">
+   <top>
+      <VBox style="-fx-background-color: #4682b4; -fx-padding: 15;">
+         <HBox alignment="CENTER_LEFT" spacing="20">
+            <Label text="Pale's Bank System" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: bold;"/>
+            <Label fx:id="welcomeLabel" style="-fx-text-fill: white; -fx-font-size: 16;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Logout" onAction="#handleLogout" style="-fx-background-color: #ff69b4; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;"/>
+         </HBox>
+      </VBox>
+   </top>
+   
+   <center>
+      <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE">
+         
+         <!-- Customer Registration Tab -->
+         <Tab text="Customer Registration">
+            <ScrollPane fitToWidth="true">
+               <VBox spacing="20" style="-fx-padding: 20;">
+                  <Label text="Customer Registration" style="-fx-text-fill: #4682b4; -fx-font-size: 20; -fx-font-weight: bold;"/>
+                  
+                  <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: #f8fdff; -fx-background-radius: 10; -fx-border-color: #4682b4; -fx-border-radius: 10;">
+                     <Label text="Personal Information" style="-fx-text-fill: #4682b4; -fx-font-size: 16; -fx-font-weight: bold;"/>
+                     
+                     <GridPane hgap="10" vgap="10">
+                        <columnConstraints>
+                           <ColumnConstraints percentWidth="50"/>
+                           <ColumnConstraints percentWidth="50"/>
+                        </columnConstraints>
+                        
+                        <Label text="First Name:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <TextField fx:id="firstNameField" promptText="Enter first name" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        
+                        <Label text="Last Name:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <TextField fx:id="lastNameField" promptText="Enter last name" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                        
+                        <Label text="ID Number:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <TextField fx:id="idNumberField" promptText="Enter ID number" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                        
+                        <Label text="Phone Number:" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <TextField fx:id="phoneField" promptText="Enter phone number" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                        
+                        <Label text="Email Address:" GridPane.rowIndex="4" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <TextField fx:id="emailField" promptText="Enter email address" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                        
+                        <Label text="Physical Address:" GridPane.rowIndex="5" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <TextField fx:id="addressField" promptText="Enter physical address" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                        
+                        <Label text="Nationality:" GridPane.rowIndex="6" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <TextField fx:id="nationalityField" promptText="e.g., Motswana" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                        
+                        <Label text="Date of Birth:" GridPane.rowIndex="7" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <TextField fx:id="dobField" promptText="YYYY-MM-DD" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+                     </GridPane>
+                  </VBox>
+                  
+                  <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: #f8fdff; -fx-background-radius: 10; -fx-border-color: #4682b4; -fx-border-radius: 10;">
+                     <Label text="Next of Kin Information" style="-fx-text-fill: #4682b4; -fx-font-size: 16; -fx-font-weight: bold;"/>
+                     
+                     <GridPane hgap="10" vgap="10">
+                        <columnConstraints>
+                           <ColumnConstraints percentWidth="50"/>
+                           <ColumnConstraints percentWidth="50"/>
+                        </columnConstraints>
+                        
+                        <Label text="Full Name:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <TextField fx:id="kinNameField" promptText="Enter full name" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        
+                        <Label text="Relationship:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <TextField fx:id="kinRelationshipField" promptText="e.g., Mother, Father, Spouse" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                        
+                        <Label text="Phone Number:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <TextField fx:id="kinPhoneField" promptText="Enter phone number" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                        
+                        <Label text="Address:" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <TextField fx:id="kinAddressField" promptText="Enter address" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                     </GridPane>
+                  </VBox>
+                  
+                  <HBox spacing="20" alignment="CENTER">
+                     <Button text="Register Customer" onAction="#handleRegisterCustomer" style="-fx-background-color: #ff69b4; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 10 20;"/>
+                     <Button text="Clear Form" onAction="#handleClearForm" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 10 20;"/>
+                  </HBox>
+               </VBox>
+            </ScrollPane>
+         </Tab>
+         
+         <!-- Account Management Tab -->
+         <Tab text="Account Management">
+            <ScrollPane fitToWidth="true">
+               <VBox spacing="20" style="-fx-padding: 20;">
+                  <Label text="Account Management" style="-fx-text-fill: #4682b4; -fx-font-size: 20; -fx-font-weight: bold;"/>
+                  
+                  <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: #f8fdff; -fx-background-radius: 10; -fx-border-color: #4682b4; -fx-border-radius: 10;">
+                     <Label text="Create New Account" style="-fx-text-fill: #4682b4; -fx-font-size: 16; -fx-font-weight: bold;"/>
+                     
+                     <GridPane hgap="10" vgap="10">
+                        <columnConstraints>
+                           <ColumnConstraints percentWidth="50"/>
+                           <ColumnConstraints percentWidth="50"/>
+                        </columnConstraints>
+                        
+                        <Label text="Select Customer:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <ComboBox fx:id="customerComboBox" promptText="Select customer" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        
+                        <Label text="Account Type:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <ComboBox fx:id="accountTypeComboBox" promptText="Select account type" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                        
+                        <Label text="Initial Deposit (BWP):" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <TextField fx:id="initialDepositField" promptText="Enter amount" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                        
+                        <Label text="Company Name (Cheque only):" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <TextField fx:id="companyField" promptText="Enter company name" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                        
+                        <Label text="Company Address (Cheque only):" GridPane.rowIndex="4" GridPane.columnIndex="0" style="-fx-text-fill: #4682b4;"/>
+                        <TextField fx:id="companyAddressField" promptText="Enter company address" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                     </GridPane>
+                     
+                     <Button text="Create Account" onAction="#handleCreateAccount" style="-fx-background-color: #ff69b4; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 10 20;"/>
+                  </VBox>
+                  
+                  <VBox spacing="10">
+                     <Label text="Existing Accounts" style="-fx-text-fill: #4682b4; -fx-font-size: 16; -fx-font-weight: bold;"/>
+                     <TableView fx:id="accountsTable" style="-fx-border-color: #4682b4; -fx-border-radius: 5;">
+                        <columns>
+                           <TableColumn fx:id="accNumberCol" text="Account Number" prefWidth="150"/>
+                           <TableColumn fx:id="accTypeCol" text="Account Type" prefWidth="120"/>
+                           <TableColumn fx:id="customerCol" text="Customer" prefWidth="200"/>
+                           <TableColumn fx:id="balanceCol" text="Balance" prefWidth="150"/>
+                        </columns>
+                     </TableView>
+                  </VBox>
+               </VBox>
+            </ScrollPane>
+         </Tab>
+         
+         <!-- Customer Search Tab -->
+         <Tab text="Customer Search">
+            <VBox spacing="20" style="-fx-padding: 20;">
+               <Label text="Customer Search &amp; Details" style="-fx-text-fill: #4682b4; -fx-font-size: 20; -fx-font-weight: bold;"/>
+               
+               <HBox spacing="10" alignment="CENTER_LEFT">
+                  <TextField fx:id="searchField" promptText="Search by name, ID, or phone" style="-fx-pref-width: 300;"/>
+                  <Button text="Search" onAction="#handleSearchCustomer" style="-fx-background-color: #ff69b4; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;"/>
+                  <Button text="View All" onAction="#handleViewAllCustomers" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;"/>
+               </HBox>
+               
+               <TableView fx:id="customerTable" style="-fx-border-color: #4682b4; -fx-border-radius: 5;">
+                  <columns>
+                     <TableColumn fx:id="custIdCol" text="Customer ID" prefWidth="120"/>
+                     <TableColumn fx:id="fullNameCol" text="Full Name" prefWidth="200"/>
+                     <TableColumn fx:id="idNumberCol" text="ID Number" prefWidth="150"/>
+                     <TableColumn fx:id="phoneCol" text="Phone" prefWidth="150"/>
+                  </columns>
+               </TableView>
+               
+               <Button text="View Full Details" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 10 20;"/>
+            </VBox>
+         </Tab>
+         
+         <!-- Loan Management Tab -->
+         <Tab text="Loan Management">
+            <VBox spacing="20" style="-fx-padding: 20;">
+               <Label text="Loan Applications" style="-fx-text-fill: #4682b4; -fx-font-size: 20; -fx-font-weight: bold;"/>
+               
+               <TableView fx:id="loanTable" style="-fx-border-color: #4682b4; -fx-border-radius: 5;">
+                  <columns>
+                     <TableColumn fx:id="loanIdCol" text="Loan ID" prefWidth="100"/>
+                     <TableColumn fx:id="loanCustomerCol" text="Customer" prefWidth="150"/>
+                     <TableColumn fx:id="amountCol" text="Amount" prefWidth="120"/>
+                     <TableColumn fx:id="purposeCol" text="Purpose" prefWidth="150"/>
+                     <TableColumn fx:id="dateCol" text="Application Date" prefWidth="150"/>
+                     <TableColumn fx:id="statusCol" text="Status" prefWidth="100"/>
+                  </columns>
+               </TableView>
+               
+               <HBox spacing="20" alignment="CENTER">
+                  <Button text="Approve Selected" onAction="#handleApproveLoan" style="-fx-background-color: #32cd32; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 10 20;"/>
+                  <Button text="Reject Selected" onAction="#handleRejectLoan" style="-fx-background-color: #ff4500; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 10 20;"/>
+                  <Button text="Refresh List" onAction="#handleRefreshLoans" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 10 20;"/>
+               </HBox>
+            </VBox>
+         </Tab>
+         
+      </TabPane>
+   </center>
+</BorderPane>

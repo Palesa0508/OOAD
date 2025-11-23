@@ -1,0 +1,29 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "21",
+            "installMaven": "true",
+            "installGradle": "false"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "redhat.java",
+                "vscjava.vscode-java-debug",
+                "vscjava.vscode-java-dependency",
+                "vscjava.vscode-java-test"
+            ]
+        }
+    },
+    "forwardPorts": [8080, 8000],
+    "portsAttributes": {
+        "8080": {
+            "label": "JavaFX Application",
+            "onAutoForward": "notify"
+        }
+    },
+    "postCreateCommand": "echo 'Java Banking App setup complete! Run with: javac --module-path=/usr/share/openjfx/lib --add-modules=javafx.controls,javafx.fxml *.java && java --module-path=/usr/share/openjfx/lib --add-modules=javafx.controls,javafx.fxml Main'"
+}
